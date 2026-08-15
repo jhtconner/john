@@ -1,0 +1,10 @@
+.frame {
+    position: relative;
+    width: 320px;
+    aspect-ratio: 3 / 4;
+}
+
+.frame canvas {
+    display: block;
+    filter: drop-shadow(0 0 4px var(--color-accent));
+}

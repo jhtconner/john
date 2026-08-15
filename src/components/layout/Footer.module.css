@@ -1,0 +1,9 @@
+/* Footer.module.css */
+.footer {
+    padding: 48px 0 80px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    margin-top: 80px;
+}
