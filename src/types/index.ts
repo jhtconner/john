@@ -15,5 +15,5 @@ export interface BlogPost {
     date: string;
     excerpt: string;
     readTime: string;
-    body: string[];
+    body: string;
 }

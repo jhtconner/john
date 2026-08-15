@@ -9,7 +9,8 @@ export const projects: Project[] = [
             'A ground-up rebuild of my portfolio, moving away from the Windows 95 desktop concept toward a modern, minimal design. Features an ASCII-art hover effect on a picture of me, a blog section linking out from selected work, and a whole bunch of neat stuff hidden on terminal (hint: press "/"!).',
         stack: ['TypeScript', 'React'],
         image: '/public/projects/john.png',
-        postSlug: 'A masterclass on developing unnecessary software',
+        href: 'https://github.com/jhtconner/john',
+        postSlug: 'masterclass-unnecessary-software',
     },
     {
         slug: 'RWFM-72',

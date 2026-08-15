@@ -1,22 +1,21 @@
-import { useParams, Link } from 'react-router-dom';
-import { posts } from '../../data/posts';
+import { useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { getPostBySlug } from '../../data/posts.ts';
 
 export function BlogPostPage() {
-    const { slug } = useParams();
-    const post = posts.find((p) => p.slug === slug);
+    const { slug } = useParams<{ slug: string }>();
+    const post = slug ? getPostBySlug(slug) : undefined;
 
-    if (!post) return <p>Post not found. <Link to="/">← Home</Link></p>;
+    if (!post) return <div>Post not found.</div>;
 
     return (
-        <article style={{ padding: '64px 0' }}>
-            <Link to="/" style={{ fontFamily: 'var(--font-mono)', fontSize: 14 }}>← back</Link>
-            <h1 style={{ marginTop: 24 }}>{post.title}</h1>
-            <p style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)', fontSize: 13 }}>
-                {post.date} · {post.readTime}
-            </p>
-            {post.body.map((para, i) => (
-                <p key={i} style={{ marginTop: 20 }}>{para}</p>
-            ))}
+        <article>
+            <h1>{post.title}</h1>
+            <span>{post.date} · {post.readTime}</span>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {post.body}
+            </ReactMarkdown>
         </article>
     );
 }

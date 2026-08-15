@@ -32,3 +32,34 @@
     margin: 8px 0 0;
     font-size: 15px;
 }
+
+
+.blog-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--border-color, #3a3f4b);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.blog-card:hover {
+    border-color: var(--accent-color, #6c7688);
+}
+
+.blog-meta {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-family: monospace;
+}
+
+.blog-title {
+    text-decoration: underline;
+    margin: 8px 0;
+}
+
+.blog-excerpt {
+    opacity: 0.85;
+    line-height: 1.5;
+}

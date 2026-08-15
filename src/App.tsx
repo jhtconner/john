@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Nav } from './components/layout/Nav';
 import { Footer } from './components/layout/Footer';
-import { Hero } from './components/hero/Hero';
+import { Hero } from './components/hero/hero';
 import { ProjectGrid } from './components/projects/ProjectGrid';
 import { BlogList } from './components/blog/BlogList';
 import { BlogPostPage } from './components/blog/BlogPostPage';
