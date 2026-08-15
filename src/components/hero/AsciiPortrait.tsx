@@ -53,7 +53,6 @@ export function AsciiPortrait({ src, alt }: AsciiPortraitProps) {
         ctx.scale(dpr, dpr);
 
         const cssVars = getComputedStyle(document.documentElement);
-        const bg = cssVars.getPropertyValue('--color-surface').trim() || '#3B4252';
         const fg = cssVars.getPropertyValue('--color-accent').trim() || '#88C0D0';
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
