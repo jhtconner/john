@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -6,6 +7,10 @@ import { getPostBySlug } from '../../data/posts.ts';
 export function BlogPostPage() {
     const { slug } = useParams<{ slug: string }>();
     const post = slug ? getPostBySlug(slug) : undefined;
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
 
     if (!post) return <div>Post not found.</div>;
 
