@@ -5,6 +5,7 @@
     font-family: var(--font-mono);
     font-weight: 700;
     color: var(--color-accent);
+    text-decoration: none;
 }
 .hint {
     font-family: var(--font-mono);
