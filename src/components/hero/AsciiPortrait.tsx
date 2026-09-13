@@ -1,16 +1,17 @@
 import { useEffect, useRef } from 'react';
 import styles from './AsciiPortrait.module.css';
 
-const ASCII_RAMP = '.:-=+*#%@';
-const COLS = 100;
+const ASCII_RAMP = '.,:;+*#%@';
+const COLS = 130;
 const CHAR_ASPECT = 0.6;
 const LINE_HEIGHT = 0.6;
-const GLYPH_SCALE = 0.65;
-const CONTRAST = 2.5;
-const REPEL_RADIUS = 40;
+const GLYPH_SCALE = 0.48;
+const CONTRAST = 2.00;
+const BRIGHTNESS = 0.13;
+const REPEL_RADIUS = 35;
 const REPEL_FORCE = 2.2;
-const SPRING = 0.08;
-const FRICTION = 0.82;
+const SPRING = 0.10;
+const FRICTION = 0.78;
 const ALPHA_THRESHOLD = 20;
 
 interface Particle {
@@ -96,8 +97,8 @@ export function AsciiPortrait({ src, alt }: AsciiPortraitProps) {
                     if (alpha < ALPHA_THRESHOLD) continue;
 
                     let brightness = (data[i] + data[i + 1] + data[i + 2]) / 3 / 255;
-                    brightness = Math.min(1, Math.max(0, (brightness - 0.5) * CONTRAST + 0.5));
-                    const charIndex = Math.round((1 - brightness) * (ASCII_RAMP.length - 1));
+                    brightness = Math.min(1, Math.max(0, (brightness - 0.5 + BRIGHTNESS) * CONTRAST + 0.5));
+                    const charIndex = Math.round(brightness * (ASCII_RAMP.length - 1));
                     const char = ASCII_RAMP[charIndex];
                     if (char === ' ') continue;
 
